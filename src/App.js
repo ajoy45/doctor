@@ -7,6 +7,7 @@ import About from '../src/Pagess/About/About';
 import { Route, Routes } from 'react-router-dom';
 import Login from './Pagess/Login/Login';
 import Singup from './Pagess/Singup/Singup';
+import Footer from './Shared/Footer/Footer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login"element={<Login></Login>}></Route>
         <Route path="/singup"element={<Singup></Singup>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }
