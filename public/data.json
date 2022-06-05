@@ -1,0 +1,29 @@
+[
+    {"id":1,
+    "name":"Treatment and Therapy of Heart Disease",
+    "description":"We care for the whole person, see the complexity of each person’s life, and believe that addressing a broad range of human needs.",
+    "price":500,
+    "list1":"Payment",
+    "list2":"Interest Only",
+    "list3":"Flesible",
+    "img":"https://i.ibb.co/2FzL0Gh/heart.jpg"
+    },
+    {"id":2,
+    "name":"Treatment and Therapy of Bones and Joints",
+    "description":"To have patients feel comfortable in the security and confidentiality of their information, to have a trusting relationship between.",
+    "price":490,
+    "list1":"Payment",
+    "list2":"Interest Only",
+    "list3":"Flesible",
+    "img":"https://i.ibb.co/jv1VQX4/bone-join.jpg"
+    },
+    {"id":3,
+    "name":"Treatment and Therapy of Neurological Disorders",
+    "description":"A working family that cultivates positivity, team work, support and ongoing educational opportunities and opportunities for potential.",
+    "price":1000,
+    "list1":"Payment",
+    "list2":"Interest Only",
+    "list3":"Flesible",
+    "img":"https://i.ibb.co/qmYThjh/neurological.jpg"
+    }
+]
