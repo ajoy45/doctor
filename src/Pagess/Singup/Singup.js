@@ -1,8 +1,18 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init'
 import './Singup.css'
 const Singup = () => {
+     // create user start
+     const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
+    // create user end
     const emailRef=useRef('');
     const passwordRef=useRef('');
     const confirmPasswordRef=useRef('');
@@ -11,8 +21,13 @@ const Singup = () => {
         const email=emailRef.current.value;
         const password=passwordRef.current.value;
         const confirmPassword=confirmPasswordRef.current.value;
-        console.log(email,password,confirmPassword)
+        console.log(email,password,confirmPassword);
+        if(password===confirmPassword){
+            createUserWithEmailAndPassword(email,password)
+        }
+       
     }
+   
     return (
         <div className='bg-color w-50 mx-auto mt-5'>
             <h1 className='text-center pt-3'>Please Singup!!</h1>

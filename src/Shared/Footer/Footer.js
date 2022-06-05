@@ -28,10 +28,10 @@ const Footer = () => {
 
                 <div>
                     <h1>Connect</h1>
-                    <FontAwesomeIcon icon={faCoffee} />
-                    <FontAwesomeIcon icon={faFaceAngry} />
-                    <FontAwesomeIcon icon={faTShirt} />
-                    <FontAwesomeIcon icon={faSadCry} />
+                    <FontAwesomeIcon className='me-3' icon={faCoffee} />
+                    <FontAwesomeIcon className='me-3' icon={faFaceAngry} />
+                    <FontAwesomeIcon className='me-3' icon={faTShirt} />
+                    <FontAwesomeIcon className='me-3' icon={faSadCry} />
                     <p>info@cliniq.com</p>
                     <p>60 East 65th Street, New York</p>
 
@@ -41,7 +41,7 @@ const Footer = () => {
             <div className='hr-bar'>
                
             </div>
-            <p className='text-center text-white p-4'>©2021 CLINIQ. All rights reserved</p>
+            <p className='text-center text-white p-4'>©2022 CLINIQ. All rights reserved</p>
         </div>
 
     );
