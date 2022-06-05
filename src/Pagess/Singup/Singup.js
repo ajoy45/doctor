@@ -1,10 +1,15 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 import './Singup.css'
 const Singup = () => {
+    // google singin start
+    
+    const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+
+    // google singin end
      // create user start
      const [
         createUserWithEmailAndPassword,
@@ -52,7 +57,7 @@ const Singup = () => {
                     <span className='ps-3'>Terms and conditions</span>
                 </Form.Group>
                 <div className='text-center '>
-                <button className='d-block mx-auto border-0 mb-2 p-1 w-50'>Google Singin</button>
+                <button onClick={()=>signInWithGoogle()} className='d-block mx-auto border-0 mb-2 p-1 w-50'>Google Singin</button>
                 <Button className='bg-danger  mb-4 px-4 w-50' variant="primary" type="submit">
                     Singup
                 </Button>

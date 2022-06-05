@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
@@ -15,6 +15,7 @@ const Login = () => {
       ] = useSignInWithEmailAndPassword(auth);
 
     // end singin
+    
     const emailRef=useRef('');
     const passwordRef=useRef('');
     
@@ -25,12 +26,17 @@ const Login = () => {
         console.log(email,password);
         signInWithEmailAndPassword(email,password)
     }
+    // google singin start
+    
+        const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+
+    // google singin end
     if(user){
         navigate('/')
     }
     return (
         <div className='bg-color w-50 mx-auto mt-5'>
-        <h1 className='text-center pt-3'>Please Singup!!</h1>
+        <h1 className='text-center pt-3'>Please Login!!</h1>
         <Form onSubmit={handelFormLogin} className='w-50 mx-auto' >
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -45,7 +51,7 @@ const Login = () => {
             
            
             <div className='text-center '>
-            <button className='d-block mx-auto border-0 mb-2 p-1 w-50'>Google Singin</button>
+            <button onClick={()=>signInWithGoogle()} className='d-block mx-auto border-0 mb-2 p-1 w-50'>Google Singin</button>
             <Button className='bg-danger  mb-4 px-4 w-50' variant="primary" type="submit">
                 Login
             </Button>
