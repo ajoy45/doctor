@@ -8,6 +8,8 @@ import { Route, Routes } from 'react-router-dom';
 import Login from './Pagess/Login/Login';
 import Singup from './Pagess/Singup/Singup';
 import Footer from './Shared/Footer/Footer';
+import Checkout from './Pagess/Checkout/Checkout';
+import RequiredAuth from './RequiredAuth/RequiredAuth';
 
 function App() {
   return (
@@ -19,6 +21,11 @@ function App() {
         <Route path="/services"element={<Servicess></Servicess>}></Route>
         <Route path="/about"element={<About></About>}></Route>
         <Route path="/login"element={<Login></Login>}></Route>
+        <Route path="/checkout"element={
+          <RequiredAuth>
+            <Checkout></Checkout>
+          </RequiredAuth>
+        }></Route>
         <Route path="/singup"element={<Singup></Singup>}></Route>
       </Routes>
       <Footer></Footer>

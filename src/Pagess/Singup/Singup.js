@@ -3,8 +3,11 @@ import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
-import './Singup.css'
+import './Singup.css';
+import { useNavigate} from 'react-router-dom';
 const Singup = () => {
+    const navigate=useNavigate();
+   
     // for terms and condition
     const[agree,setAgree]=useState(false);
     // google singin start
@@ -30,12 +33,13 @@ const Singup = () => {
         const confirmPassword=confirmPasswordRef.current.value;
         console.log(email,password,confirmPassword);
         if(password===confirmPassword){
-            createUserWithEmailAndPassword(email,password)
+            createUserWithEmailAndPassword(email,password);
+           navigate("/")
         }
         else{
             alert('password not match')
         }
-        if(!/\S+@\S+\.\S+/.test('email')){
+        if(/\S+@\S+\.\S+/.test('!email')){
             alert('provide valid email')
         }
        
