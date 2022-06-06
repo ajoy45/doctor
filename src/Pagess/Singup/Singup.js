@@ -1,10 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 import './Singup.css'
 const Singup = () => {
+    // for terms and condition
+    const[agree,setAgree]=useState(false);
     // google singin start
     
     const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
@@ -30,6 +32,12 @@ const Singup = () => {
         if(password===confirmPassword){
             createUserWithEmailAndPassword(email,password)
         }
+        else{
+            alert('password not match')
+        }
+        if(!/\S+@\S+\.\S+/.test('email')){
+            alert('provide valid email')
+        }
        
     }
    
@@ -53,12 +61,12 @@ const Singup = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     {/* <Form.Check type="checkbox" label="Terms and conditions" /> */}
-                    <input type="checkbox" name="" id="" />
-                    <span className='ps-3'>Terms and conditions</span>
+                    <input onClick={()=>setAgree(!agree)} type="checkbox" name="" id="" />
+                    <span className={`ps-3 ${!agree? "text-danger":"text-primary"}`}>Terms and conditions</span>
                 </Form.Group>
                 <div className='text-center '>
                 <button onClick={()=>signInWithGoogle()} className='d-block mx-auto border-0 mb-2 p-1 w-50'>Google Singin</button>
-                <Button className='bg-danger  mb-4 px-4 w-50' variant="primary" type="submit">
+                <Button disabled={!agree} className='bg-danger  mb-4 px-4 w-50' variant="primary" type="submit">
                     Singup
                 </Button>
               

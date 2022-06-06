@@ -1,0 +1,24 @@
+.team-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    background-color:#cfbe9a;
+    padding:75px 0px
+}
+.bg{
+    background-color:#cfbe9a;
+}
+@media only screen and (max-width:912px){
+    .team-container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        row-gap: 10px;
+    }
+}
+@media only screen and (max-width:656px){
+    .team-container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        row-gap: 10px;
+    
+    }
+}
