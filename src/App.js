@@ -11,6 +11,7 @@ import Footer from './Shared/Footer/Footer';
 import Checkout from './Pagess/Checkout/Checkout';
 import RequiredAuth from './RequiredAuth/RequiredAuth';
 import Blogs from './Pagess/Blogs/Blogs';
+import NotFound from './Pagess/NotFound/NotFound';
 
 function App() {
   return (
@@ -29,7 +30,9 @@ function App() {
           </RequiredAuth>
         }></Route>
         <Route path="/singup"element={<Singup></Singup>}></Route>
+        <Route path='*'element={<NotFound></NotFound>}></Route>
       </Routes>
+      
       <Footer></Footer>
     </div>
   );
