@@ -20,7 +20,7 @@ const Blogs = () => {
                     SAML	</p>
             </div>
             <div className='w-25 bg-primary text-white ms-4 mt-4 mb-4'>
-                < h1 className=' p-4 fs-4'> What other services does firebase provide other than authentication</h1>
+                < h1 className=' p-4 fs-4'> What other services does firebase provide other than authentication?</h1>
                 <p className=' fs-4 ps-2'>1.Cloud Firestore
                     2.Cloud Functions
                     3.Authentication
@@ -30,7 +30,7 @@ const Blogs = () => {
                     7.Predictions
                     8.Cloud Messaging
                     9.Dynamic Links
-                    10.Remote Config	</p>
+                    10.Remote Config</p>
             </div>
 
         </div>
