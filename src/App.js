@@ -10,6 +10,7 @@ import Singup from './Pagess/Singup/Singup';
 import Footer from './Shared/Footer/Footer';
 import Checkout from './Pagess/Checkout/Checkout';
 import RequiredAuth from './RequiredAuth/RequiredAuth';
+import Blogs from './Pagess/Blogs/Blogs';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/services"element={<Servicess></Servicess>}></Route>
         <Route path="/about"element={<About></About>}></Route>
         <Route path="/login"element={<Login></Login>}></Route>
+        <Route path="/blog"element={<Blogs></Blogs>}></Route>
         <Route path="/checkout"element={
           <RequiredAuth>
             <Checkout></Checkout>
