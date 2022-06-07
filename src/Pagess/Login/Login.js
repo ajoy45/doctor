@@ -1,11 +1,22 @@
 import React, { useRef } from 'react';
 import { Button, Form} from 'react-bootstrap';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Login.css'
 const Login = () => {
+    // password reset
+    const emailRef=useRef('');
+    const passwordRef=useRef('');
+    const email=emailRef.current.value;
+    const [sendPasswordResetEmail, sending, error2] = useSendPasswordResetEmail(auth);
     const navigate=useNavigate();
+    const handelPasswordReset=async ()=>{
+        await sendPasswordResetEmail(email);
+        toast("Reset password email sending....");
+    }
     
     // start singin
     const [
@@ -17,8 +28,7 @@ const Login = () => {
 
     // end singin
     
-    const emailRef=useRef('');
-    const passwordRef=useRef('');
+   
     
     const handelFormLogin=event=>{
         event.preventDefault();
@@ -61,7 +71,9 @@ const Login = () => {
             </div>
             
         </Form>
-        <p className='text-center pb-4'><Link to='/singup' className='text-decoration-none text-white'>Already Singup?Go to Login</Link></p>
+        <p className='text-center '><Link to='/singup' className='text-decoration-none text-white'> New Here?Go to Singup</Link></p>
+        <p onClick={handelPasswordReset} className='text-center text-white pb-4 pointer'>Password Reset</p>
+        <ToastContainer />
     </div>
     );
 };
