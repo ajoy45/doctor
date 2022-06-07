@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# LIVE LINK:https://unrivaled-pothos-e61fd6.netlify.app/
 # technology used
 *react bootstrap
 *firebase hooks 
