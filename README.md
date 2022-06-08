@@ -1,4 +1,4 @@
-# LIVE LINK:https://unrivaled-pothos-e61fd6.netlify.app/
+# LIVE LINK:https://magical-cassata-279ca3.netlify.app/
 # technology used
 *react bootstrap
 *firebase hooks 
